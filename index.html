@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input type="button" value="GET" onClick="get()"/>
+        <script>
+            const url = 'https://eecqo8eedg.execute-api.ap-northeast-2.amazonaws.com/2019-06-30/board';
+            function get(){
+                fetch(url, {
+                    headers: {
+                        'Accept': 'aaplication/json'
+                    }
+                }).then(res => res.json())
+                .then(data => console.log(data))
+                .catch(err => console.error(err))
+            }
+        </script>
+    </body>
+</html>
